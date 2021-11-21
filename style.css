@@ -1,0 +1,29 @@
+ /* a{
+    text-align: none;
+}
+.main{
+    padding: 50px;
+}
+
+
+.images{
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    
+}
+img {
+    height: 180px;
+    padding: 30px;
+    border: 3px solid lightblue;
+    box-shadow: 2px solid rgb(16, 16, 77);
+   
+  }
+p:hover{
+    color: crimson;
+    }
+p{
+     color: lightblue ;
+ }  */
+ 
