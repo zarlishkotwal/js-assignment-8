@@ -56,7 +56,23 @@
 
 // Q#5
 
+// var str1 = "zarlish kotwal "
+// function indexOfNew(str,element){
+//     var resultIndex =-1;
+//     for(var i=0; i<str.length;i++){
+//         if(element==str[i]){
+//             resultIndex = i;
+//             break
+//             // console.log(str[i])
+//         }
+//         else{
+//             resultIndex = -1
+//         }
+//     }
+//     return resultIndex
+// }
 
+// console.log(indexOfNew(str1,"s"));
 
 // Q#6
 
@@ -145,7 +161,32 @@
 
 //  Q#4 
 
+// var studentNames = ["shono","utban","shan","ibrahim","ahmed","Aslam","Umair","hasnain","Usman","faiz"]
+// var studentClass = [9,3,5,6,2,3,7,1,3,4]
+// var tab;
+// var tableCount = 10;
 
+// function fillData(){
+//     for(var i = 0; i<studentNames.length;i++){
+//         tab = document.getElementById("tr"+String(i+1))
+//         tab.innerHTML += "<td>"+i+"</td>";
+//         tab.innerHTML += "<td>"+studentNames[i]+"</td>";
+//         tab.innerHTML += "<td>"+studentClass[i]+"</td>";
+//         tab.innerHTML += "<td><button onclick='deleteStudent("+i+")'>Delete</button></td>";      
+//     }
+// }
+// fillData()
+
+// function deleteStd(index)
+// {
+//     studentNames.shift(index)
+//     studentClass.shift(index)
+//     for(var i = 0; i<tableCount;i++){
+//         var tab12 = document.getElementById("tr"+String(i+1))
+//         tab12.innerHTML = ""
+//     }
+//     fillData()
+// }
 
 // Q#5
 
@@ -177,16 +218,72 @@
 
 // chapter 49 to 52
 
+// Q#1
+
 // var userId = document.getElementById("userid");
-// var userPassword = document.getElementById("userpassword");
-// var userInformation = document.getElementById("userinformation");
-// function submit(){
-//     userInformation.innerHTML = "User Name: " +userId.value+" and Password is: "+userPassword.value+""
+// var password = document.getElementById("password");
+// var userinfo = document.getElementById("userinfo");
+// function submit1(){
+//     userinfo.innerHTML = "User id: "+userId.value+" and Password is: "+password.value+""
 // }
 
-var userid = document.getElementById("userid");
-var passw = document.getElementById("passw");
-var userinfo = document.getElementById("userinfo");
-function submit1(){
-    userinfo.innerHTML = "User Name: "+userid.value+" and Password is: "+passw.value+""
+// Q#2
+
+// function seeMore(){
+    //     var para = document.getElementById("para")
+    //     para.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum inventore itaque fugiat beatae harum, repudiandae ipsa eius obcaecati voluptas corrupti cupiditate, odit at eaque maxime sed officia. Porro, numquam alias!"
+    // }
+
+Q#3
+
+var studentNames = ["usama","taha","anas","shan","ibrahim"]
+var studentClass = [10,7,8,4,1]
+var tab;
+var tableCount;
+
+function fillData(){
+    for(var i = 0; i<stdNames.length;i++){
+        var str1 = String("tr"+(i+1))
+        // alert(str1)
+        tab = document.getElementById(str1)        
+        tab.innerHTML += "<td>"+i+"</td>";
+        tab.innerHTML += "<td>"+studentNames[i]+"</td>";
+        tab.innerHTML += "<td>"+studentClass[i]+"</td>";
+        tab.innerHTML += "<td><button onclick='deleteStd("+i+")'>Delete</button></td>";      
+        tab.innerHTML += "<td><button onclick='editRecord("+i+")'>Edit</button></td>";      
+            
+    }
 }
+fillData()
+
+function deleteStd(index)
+{
+    tableCount = studentNames.length
+    studentNames.shift(index)
+    studentClass.shift(index)
+    for(var i = 0; i<tableCount;i++){
+        var tab12 = document.getElementById("tr"+String(i+1))
+        tab12.innerHTML = ""
+    }
+    fillData()
+
+}
+function addRecord(){
+    tableCount = studentNames.length
+    var studentName1 = document.getElementById("userName")
+    var studentClass1 = document.getElementById("classNo")
+    studentNames.push(studentName1.value)
+    studentClass.push(studentClass1.value)
+    for(var i = 0; i<tableCount;i++){
+        var tab12 = document.getElementById("tr"+String(i+1))
+        tab12.innerHTML = ""
+    }
+    fillData()
+}
+
+function editRecord(index1){
+    alert("Student Name is: "+studentNames[index1]+"\nStudent Class: "+studentClass[index1])
+
+
+
+
